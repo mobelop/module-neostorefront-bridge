@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mobelop" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Mobelop Bridge</label>
+            <tab>advanced</tab>
+            <resource>Mobelop_Bridge::config_mobelop_bridge</resource>
+            <group id="bridge" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>General</label>
+                <field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Enable Catalog Sync</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>API Key</label>
+                    <config_path>mobelop/bridge/api_key</config_path>
+                    <comment><![CDATA[Email <a href="mailto:info@mobelop.com">info@mobelop.com</a> to obtain the key]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
